@@ -1,7 +1,7 @@
 ﻿
 namespace PaperPleas
 {
-    partial class paper
+    partial class Paper
     {
         /// <summary>
         ///  Required designer variable.
