@@ -1,0 +1,15 @@
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\bin\Debug\netcoreapp3.1\PaperPleas.exe
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\bin\Debug\netcoreapp3.1\PaperPleas.deps.json
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\bin\Debug\netcoreapp3.1\PaperPleas.runtimeconfig.json
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\bin\Debug\netcoreapp3.1\PaperPleas.runtimeconfig.dev.json
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\bin\Debug\netcoreapp3.1\PaperPleas.dll
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\bin\Debug\netcoreapp3.1\PaperPleas.pdb
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\obj\Debug\netcoreapp3.1\PaperPleas.csprojAssemblyReference.cache
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\obj\Debug\netcoreapp3.1\PaperPleas.csproj.GenerateResource.cache
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\obj\Debug\netcoreapp3.1\PaperPleas.AssemblyInfoInputs.cache
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\obj\Debug\netcoreapp3.1\PaperPleas.AssemblyInfo.cs
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\obj\Debug\netcoreapp3.1\PaperPleas.csproj.CoreCompileInputs.cache
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\obj\Debug\netcoreapp3.1\PaperPleas.dll
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\obj\Debug\netcoreapp3.1\PaperPleas.pdb
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\obj\Debug\netcoreapp3.1\PaperPleas.genruntimeconfig.cache
+C:\Users\герман\Desktop\прога\игра\paperPlaes\PaperPleas\obj\Debug\netcoreapp3.1\PaperPleas.Restriction.resources
