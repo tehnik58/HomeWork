@@ -7,15 +7,29 @@ namespace PaperPleas
 {
     class ObjectBufer
     {
-        public List<List<GameObject>> StaticObjBuffer{ get; }
-        public List<Book> ActivObjBuffer { get; }
-        public List<Men> MenBuffer { private set; get; }
+        public List<List<GameObject>> StaticObjBuffer { get; set; }
+        public List<Book> ActivObjBuffer { get; set; }
+        public List<Men> MenBuffer { set; get; }
+
+        public ObjectBufer(ObjectBufer obj)
+        {
+            this.StaticObjBuffer = obj.StaticObjBuffer;
+            this.ActivObjBuffer = obj.ActivObjBuffer;
+            this.MenBuffer = obj.MenBuffer;
+        }
 
         public ObjectBufer()
         {
             StaticObjBuffer = new List<List<GameObject>>();
             ActivObjBuffer = new List<Book>();
             MenBuffer = new List<Men>();
+        }
+
+        public void set(ObjectBufer obj)
+        {
+            this.StaticObjBuffer = obj.StaticObjBuffer;
+            this.ActivObjBuffer = obj.ActivObjBuffer;
+            this.MenBuffer = obj.MenBuffer;
         }
 
         public void AddMen(Men men)
@@ -36,10 +50,10 @@ namespace PaperPleas
         public void AddLvl(int lvl, GameObject obj)
         {
             StaticObjBuffer.Add(new List<GameObject>());
-            AddLStaticObject(lvl, obj);
+            SetLStaticObject(lvl, obj);
         }
 
-        public void AddLStaticObject(int lvl, GameObject obj)
+        public void SetLStaticObject(int lvl, GameObject obj)
         {
             if (lvl >= StaticObjBuffer.Count)
                 AddLvl(lvl, obj);

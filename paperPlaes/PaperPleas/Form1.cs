@@ -23,76 +23,87 @@ namespace PaperPleas
 
     public partial class Paper : Form
     {
-        private readonly ObjectBufer render = new ObjectBufer();
-        private readonly Timer timer = new Timer();
-        private bool fps60 = false;
+        private ObjectBufer render     = new ObjectBufer();
+        private readonly Timer       timer      = new Timer();
+        private          bool        fps60      = false;            // флаг на 60 фпс
+        private readonly List<Book>  noRealBook = new List<Book>();
 
-        void InitGameObject()
+        private void InitGame()
         {
             Restriction.Location = new Point(100, ClientSize.Height / 2 + 100);
             Restriction.RestSize = new Size(ClientSize.Width - 200, ClientSize.Height / 2 - 100);
 
-            // окно позвди
-            render.AddLStaticObject
-                (3,
-                new GameObject(Color.Azure,
-                new Point(ClientSize.Width / 6, ClientSize.Height / 6),
-                new Size(ClientSize.Width * 4 / 6, ClientSize.Height / 3)));
-
-            //стол
-            render.AddLStaticObject
-                (1,
-                new GameObject(Color.Gray,
-                new Point(100, ClientSize.Height / 2 + 100),
-                new Size(ClientSize.Width - 200, ClientSize.Height / 2 - 100)));
-
-            //методичка что делать
-            var BaseBook = new Book(Color.Red, new Point(100, ClientSize.Height / 2 + 101), new Size(150, 250), " ");
-            BaseBook.label.Text =
-                @"методичка:
-1) Не пускайте студентов без студика УрФу
-
-2) Не пускайте без масок";
-            render.AddObject(BaseBook);
-            BaseBook.label.Click += new EventHandler(BaseBook.SwitchClick);
+            Init init = new Init(this);
+            Game.InitgameObject(ref render, ref init);
         }
 
-        void Drow()
+        private void DrowActivObject()
         {
             foreach (var obj in render.ActivObjBuffer)
-            {
-                if (obj.IsClick)
-                    obj.label.Location = this.PointToClient(Cursor.Position);
-                else if (Restriction.InRest(obj))
-                {
-                    render.ActivObjBuffer.Remove(obj);
-                    Controls.Remove(obj.label);
-                    break;
-                }
-
-                Controls.Add(obj.label); 
-            }
-
-            for (var i = 1; i < render.StaticObjBuffer.Count; i++)
-                foreach (var obj in render.StaticObjBuffer[i])
-                    Controls.Add(obj.label);
+                Controls.Add(obj.label);
         }
 
-        void ChangeFps(object Sender, EventArgs e)
+        private void DrowStaticObjectAndMen()
+        {
+            for (var i = 1; i < render.StaticObjBuffer.Count; i++)
+            {
+                if (i == 2) DrowMen();
+
+                foreach (var obj in render.StaticObjBuffer[i])
+                {
+                    Controls.Add(obj.label);
+                }
+            }
+        }
+
+        private void DrowMen()
+        {
+            if (render.MenBuffer.Count >= 1)
+                foreach (var man in render.MenBuffer)
+                    Controls.Add(man.label);
+        }
+
+        private void clear()
+        {
+            foreach (var e in render.StaticObjBuffer)
+                foreach (var a in e)
+                    Controls.Remove(a.label);
+
+            foreach (var e in render.ActivObjBuffer)
+                Controls.Remove(e.label);
+
+            foreach (var e in render.MenBuffer)
+                Controls.Remove(e.label);
+        }
+
+        private void Drow()
+        {
+            clear();
+            DrowActivObject();
+            DrowStaticObjectAndMen();
+
+            foreach (var e in render.ActivObjBuffer)
+            {
+                e.label.Click += new EventHandler(e.SwitchClick);
+            }
+        }
+
+        private void ChangeFps(object Sender, EventArgs e)
         {
             fps60 = !fps60;
 
             if (fps60)
-                timer.Interval = 15;
+                timer.Interval = 33/2;
             else
                 timer.Interval = 33;
         }
 
-        void Tick(object Sender, EventArgs e)
+        CheckBox box = new CheckBox();
+        private void Tick(object Sender, EventArgs e)
         {
+            Game.GameLogic(ref render, Cursor.Position, fps60, this);
             Drow();
 
-            CheckBox box = new CheckBox();
             box.Text = @"60 fps";
             box.Location = new Point(0, 0);
             Controls.Add(box);
@@ -104,7 +115,7 @@ namespace PaperPleas
         {
             InitializeComponent();
 
-            InitGameObject();
+            InitGame();
 
             timer.Interval = 33;
             timer.Tick += new EventHandler(Tick);
