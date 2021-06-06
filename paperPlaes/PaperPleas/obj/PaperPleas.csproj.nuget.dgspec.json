@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\герман\\Desktop\\прога\\игра\\git\\paperPlaes\\PaperPleas\\PaperPleas.csproj": {}
+    "C:\\Users\\герман\\Desktop\\прога\\игра\\paperPlaes\\PaperPleas\\PaperPleas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\герман\\Desktop\\прога\\игра\\git\\paperPlaes\\PaperPleas\\PaperPleas.csproj": {
+    "C:\\Users\\герман\\Desktop\\прога\\игра\\paperPlaes\\PaperPleas\\PaperPleas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\герман\\Desktop\\прога\\игра\\git\\paperPlaes\\PaperPleas\\PaperPleas.csproj",
+        "projectUniqueName": "C:\\Users\\герман\\Desktop\\прога\\игра\\paperPlaes\\PaperPleas\\PaperPleas.csproj",
         "projectName": "PaperPleas",
-        "projectPath": "C:\\Users\\герман\\Desktop\\прога\\игра\\git\\paperPlaes\\PaperPleas\\PaperPleas.csproj",
+        "projectPath": "C:\\Users\\герман\\Desktop\\прога\\игра\\paperPlaes\\PaperPleas\\PaperPleas.csproj",
         "packagesPath": "C:\\Users\\герман\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\герман\\Desktop\\прога\\игра\\git\\paperPlaes\\PaperPleas\\obj\\",
+        "outputPath": "C:\\Users\\герман\\Desktop\\прога\\игра\\paperPlaes\\PaperPleas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\герман\\AppData\\Roaming\\NuGet\\NuGet.Config",
